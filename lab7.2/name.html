@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Name Validation</title>
+<script>
+function validateName() {
+    let name = document.getElementById("name").value.trim();
+    let pattern = /^[A-Za-z][A-Za-z.\- ]{2,}$/;
+
+    if (name === "") {
+        alert("Name cannot be empty");
+        return false;
+    }
+    if (!pattern.test(name)) {
+        alert("Name must start with a letter and contain at least 3 characters. Only letters, dot(.) or dash(-) allowed.");
+        return false;
+    }
+    alert("Valid Name");
+    return true;
+}
+</script>
+</head>
+<body>
+
+<h3>Name</h3>
+<form onsubmit="return validateName()">
+<input type="text" id="name">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
