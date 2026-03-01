@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile Picture Validation</title>
+<script>
+function validateProfile() {
+    let userId = document.getElementById("userid").value;
+    let picture = document.getElementById("picture").value;
+
+    if (userId === "" || isNaN(userId) || userId <= 0) {
+        alert("UserId must be a positive number");
+        return false;
+    }
+
+    if (picture === "") {
+        alert("Please select a picture");
+        return false;
+    }
+
+    alert("Valid Profile");
+    return true;
+}
+</script>
+</head>
+<body>
+
+<h3>Profile Picture</h3>
+<form onsubmit="return validateProfile()">
+User ID: <input type="text" id="userid"><br><br>
+Picture: <input type="file" id="picture"><br><br>
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
